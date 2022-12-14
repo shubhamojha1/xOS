@@ -5,8 +5,6 @@
 
     0xb8000 --> memory location that will display words written there
 */
-
-
 void printf(char* str){
     
     unsigned short* VideoMemory = (unsigned short*)0xb8000;
@@ -16,7 +14,7 @@ void printf(char* str){
 }
 
 
-void kernelMain(void* multiboot_structure, unsigned int magic_number){
+extern "C" void kernelMain(void* multiboot_structure, unsigned int magic_number){
     printf("HELLO WORLD! \n\tThis is xOS!!");
     while(1);
 }
